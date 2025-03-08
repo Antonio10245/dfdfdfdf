@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetrina</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        .container { position: relative; display: inline-block; }
+        
+        /* Animazione pulsante */
+        @keyframes pulsazione {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .hotspot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid white;
+            animation: pulsazione 1.5s infinite;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 150px;
+        }
+
+        .tooltip img { width: 100%; border-radius: 5px; }
+    </style>
+</head>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vetrina</title>
+  <style>
+    .hotspot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 0, 0, 0.5); /* Colore rosso con opacità 50% */
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0.5; /* Imposta l'opacità a 50% */
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+    }
+
+    /* Posizionamento dei pallini */
+    #pallino1 { top: 200px; left: 100px; }
+    #pallino2 { top: 220px; left: 200px; }
+    #pallino3 { top: 240px; left: 300px; }
+    #pallino4 { top: 240px; left: 380px; }
+    #pallino5 { top: 220px; left: 480px; }
+    #pallino6 { top: 210px; left: 550px; }
+    #pallino7 { top: 460px; left: 120px; }
+    #pallino8 { top: 435px; left: 190px; }
+    #pallino9 { top: 480px; left: 250px; }
+    #pallino10 { top: 400px; left: 330px; }
+    #pallino11 { top: 480px; left: 430px; }
+    #pallino12 { top: 420px; left: 510px; }
+    #pallino13 { top: 500px; left: 590px; }
+  </style>
+</head>
+<body>
+
+  <h1Vetrina prova</h1>
+  <img src="vetrina.jpeg" alt="Vetrina prova" width="100%" usemap="#mappa">
+  
+  <map name="mappa">
+    <!-- Mappa con area interattiva per ciascun pallino -->
+    <area shape="rect" coords="50,50,150,150" href="#popup1" alt="Oggetto 1" class="hotspot" id="pallino1">
+    <area shape="rect" coords="100,100,200,200" href="#popup2" alt="Oggetto 2" class="hotspot" id="pallino2">
+    <area shape="rect" coords="150,150,250,250" href="#popup3" alt="Oggetto 3" class="hotspot" id="pallino3">
+    <area shape="rect" coords="200,200,300,300" href="#popup4" alt="Oggetto 4" class="hotspot" id="pallino4">
+    <area shape="rect" coords="250,250,350,350" href="#popup5" alt="Oggetto 5" class="hotspot" id="pallino5">
+    <area shape="rect" coords="300,300,400,400" href="#popup6" alt="Oggetto 6" class="hotspot" id="pallino6">
+    <area shape="rect" coords="350,350,450,450" href="#popup7" alt="Oggetto 7" class="hotspot" id="pallino7">
+    <area shape="rect" coords="400,400,500,500" href="#popup8" alt="Oggetto 8" class="hotspot" id="pallino8">
+    <area shape="rect" coords="450,450,550,550" href="#popup9" alt="Oggetto 9" class="hotspot" id="pallino9">
+    <area shape="rect" coords="500,500,600,600" href="#popup10" alt="Oggetto 10" class="hotspot" id="pallino10">
+    <area shape="rect" coords="550,550,650,650" href="#popup11" alt="Oggetto 11" class="hotspot" id="pallino11">
+    <area shape="rect" coords="600,600,700,700" href="#popup12" alt="Oggetto 12" class="hotspot" id="pallino12">
+    <area shape="rect" coords="650,650,750,750" href="#popup13" alt="Oggetto 13" class="hotspot" id="pallino13">
+  </map>
+
+  <!-- Popup per Oggetti -->
+  <div id="popup1" style="display:none; position:absolute; top:50px; left:50px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 1</h3>
+    <p>Descrizione dell'oggetto 1.</p>
+    <button onclick="document.getElementById('popup1').style.display='none'">Chiudi</button>
+  </div>
+
+  <div id="popup2" style="display:none; position:absolute; top:100px; left:100px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 2</h3>
+    <p>Descrizione dell'oggetto 2.</p>
+    <button onclick="document.getElementById('popup2').style.display='none'">Chiudi</button>
+  </div>
+
+  <div id="popup3" style="display:none; position:absolute; top:150px; left:150px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 3</h3>
+    <p>Descrizione dell'oggetto 3.</p>
+    <button onclick="document.getElementById('popup3').style.display='none'">Chiudi</button>
+  </div>
+<div id="popup4" style="display:none; position:absolute; top:200px; left:200px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 4</h3>
+    <p>Descrizione dell'oggetto 4.</p>
+    <button onclick="document.getElementById('popup4').style.display='none'">Chiudi</button>
+  </div>
+
+  <div id="popup5" style="display:none; position:absolute; top:250px; left:250px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 5</h3>
+    <p>Descrizione dell'oggetto 5.</p>
+    <button onclick="document.getElementById('popup5').style.display='none'">Chiudi</button>
+  </div>
+
+  <div id="popup6" style="display:none; position:absolute; top:300px; left:300px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 6</h3>
+    <p>Descrizione dell'oggetto 6.</p>
+    <button onclick="document.getElementById('popup6').style.display='none'">Chiudi</button>
+  </div>
+
+  <div id="popup7" style="display:none; position:absolute; top:350px; left:350px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 7</h3>
+    <p>Descrizione dell'oggetto 7.</p>
+    <button onclick="document.getElementById('popup7').style.display='none'">Chiudi</button>
+  </div>
+
+  <div id="popup8" style="display:none; position:absolute; top:400px; left:400px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 8</h3>
+    <p>Descrizione dell'oggetto 8.</p>
+    <button onclick="document.getElementById('popup8').style.display='none'">Chiudi</button>
+  </div>
+
+  <div id="popup9" style="display:none; position:absolute; top:450px; left:450px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 9</h3>
+    <p>Descrizione dell'oggetto 9.</p>
+    <button onclick="document.getElementById('popup9').style.display='none'">Chiudi</button>
+  </div>
+
+  <div id="popup10" style="display:none; position:absolute; top:500px; left:500px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 10</h3>
+    <p>Descrizione dell'oggetto 10.</p>
+    <button onclick="document.getElementById('popup10').style.display='none'">Chiudi</button>
+  </div>
+
+  <div id="popup11" style="display:none; position:absolute; top:550px; left:550px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 11</h3>
+    <p>Descrizione dell'oggetto 11.</p>
+    <button onclick="document.getElementById('popup11').style.display='none'">Chiudi</button>
+  </div>
+
+  <div id="popup12" style="display:none; position:absolute; top:600px; left:600px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 12</h3>
+    <p>Descrizione dell'oggetto 12.</p>
+    <button onclick="document.getElementById('popup12').style.display='none'">Chiudi</button>
+  </div>
+
+  <div id="popup13" style="display:none; position:absolute; top:650px; left:650px; background-color:white; border:1px solid black; padding:10px;">
+    <h3>Oggetto 13</h3>
+    <p>Descrizione dell'oggetto 13.</p>
+    <button onclick="document.getElementById('popup13').style.display='none'">Chiudi</button>
+  </div>
+
+</body>
+</html>
